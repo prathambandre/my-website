@@ -1,0 +1,359 @@
+/* General reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #2A004E;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+/* ---------- Navbar (desktop first) ---------- */
+.navbar {
+  background: #500073;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative; /* important: anchors absolute dropdown positioning to this container */
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Desktop nav: horizontal links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.nav-links a:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* mobile menu button (hidden on desktop) */
+.menu-toggle {
+  display: none;                 /* hidden by default (desktop) */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px;
+  line-height: 1;
+}
+
+/* active nav link style */
+.nav-links a.active {
+  background: #C62300;
+}
+
+/* ---------- Mobile rules ---------- */
+@media (max-width: 768px) {
+  /* show the hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* hide desktop inline nav by default on mobile */
+  .nav-links {
+    display: none;               /* will become a dropdown */
+    position: absolute;
+    top: calc(100% + 10px);      /* dropdown sits below navbar */
+    right: 20px;                 /* align to container right */
+    width: 220px;
+    flex-direction: column;      /* vertical links */
+    gap: 0;
+    background: #500073;
+    border-radius: 8px;
+    padding: 8px 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    z-index: 1200;
+  }
+
+  /* when .show is added, display dropdown */
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* mobile link styles inside dropdown */
+  .nav-links a {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Home Section */
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2A004E, #500073);
+    padding-top: 60px; /* Avoid navbar overlap */
+    text-align: center;
+}
+.home-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+.home-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.cta-btn {
+    display: inline-block;
+    background: #F14A00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.cta-btn:hover {
+    background: #C62300;
+}
+
+/* Scroll Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About Section */
+.about {
+    background: #2A004E;
+    padding: 60px 20px;
+}
+.about .container {
+    max-width: 800px;
+    margin: auto;
+}
+.about p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* Projects Section */
+.projects {
+    background: #500073;
+    padding: 60px 20px;
+}
+.projects .container {
+    max-width: 1000px;
+    margin: auto;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.project-card {
+    background: #2A004E;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+.project-card h3 {
+    color: #F14A00;
+    margin-bottom: 10px;
+}
+.project-card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Contact Section */
+.contact {
+    background: #C62300;
+    padding: 60px 20px;
+}
+.contact .container {
+    max-width: 500px;
+    margin: auto;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input, textarea, button {
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+}
+input, textarea {
+    background: #fff;
+    color: #2A004E;
+}
+button {
+    background: #F14A00;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: #500073;
+}
+
+/* Contact Links */
+.contact-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.contact-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+.contact-links a:hover {
+    background: #500073;
+}
+
+/* Navbar active link */
+.navbar a.active {
+    background: #C62300;
+}
+
+/* Back-to-top button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #F14A00;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+#back-to-top:hover {
+    background: #500073;
+}
+
+/* About Section Profile Picture */
+.about-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #F14A00;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .navbar a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Reduce section padding for smaller screens */
+    .section {
+        padding: 40px 15px;
+    }
+
+    /* About image smaller */
+    .about-image img {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* Project grid as single column */
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Contact form width */
+    .contact .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Contact links stack */
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even smaller text for mobile */
+    h1, h2 {
+        font-size: 1.4em;
+    }
+    p {
+        font-size: 0.95em;
+    }
+    button, input, textarea {
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">MyPortfolio</div>
+
+    <!-- Mobile menu button (hidden on desktop) -->
+    <button id="mobile-menu" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+    <!-- Nav links (flex on desktop, dropdown on mobile) -->
+    <div class="nav-links">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </div>
+</nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home fade-in">
+        <div class="home-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Exploring creativity through design and code.</p>
+            <a href="#projects" class="cta-btn">View My Work</a>
+        </div>
+    </section>
+    <!-- About Section -->
+<section id="about" class="section about fade-in">
+    <div class="container">
+        <!-- Profile Picture -->
+        <div class="about-image">
+            <img src="pic.jpeg" alt="Profile Picture">
+        </div>
+
+        <h2>About Me</h2>
+        <p>
+            Hi, I'm Pratham Bandre, a full-stack developer with a passion for building impossible things.  
+            From coding time-traveling apps to designing websites for intergalactic conferences, I’ve done it all… in theory.  
+            When I’m not creating futuristic projects, you can find me teaching JavaScript to dolphins or brewing coffee strong enough to power a small spaceship.
+        </p>
+    </div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="section projects fade-in">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Cosmic Portfolio</h3>
+                <p>A fully responsive 3D portfolio hosted on a comet’s tail. Built for intergalactic clients and meteor-proof design.</p>
+            </div>
+            <div class="project-card">
+                <h3>Time Traveler’s To-Do List</h3>
+                <p>An app that syncs your tasks across centuries so you’re never late… even in the past.</p>
+            </div>
+            <div class="project-card">
+                <h3>Underwater VR Adventure</h3>
+                <p>A virtual reality dive where talking dolphins teach JavaScript while you swim with pixelated sharks.</p>
+            </div>
+            <div class="project-card">
+                <h3>Dream Painter AI</h3>
+                <p>A fictional AI that turns your dreams into animated paintings, frame by frame, while you sleep.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="section contact fade-in">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Contact Info Links -->
+        <div class="contact-links">
+            <a href="mailto:alex.carter@example.com" target="_blank">📧 Email</a>
+            <a href="https://wa.me/+919768101059" target="_blank">💬 WhatsApp</a>
+            <a href="https://www.linkedin.com/in/pratham-santosh-bandre-5824332a7" target="_blank">🔗 LinkedIn</a>
+        </div>
+    </div>
+</section>
+
+    <script src="script.js"></script>
+<!-- Back to Top Button -->
+<button id="back-to-top" title="Go to top">↑</button>
+
+</body>
+</html>
